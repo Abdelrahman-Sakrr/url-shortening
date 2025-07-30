@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import logo from "@/../public/images/logo.svg";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const navVariant = {
   hidden: { opacity: 0, y: -50 },
@@ -65,7 +66,7 @@ export default function Navbar() {
           className="md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? "Close" : "Menu"}
+          {isMobileMenuOpen ? <X /> : <Menu />}
         </button>
         {isMobileMenuOpen && (
           <motion.div
