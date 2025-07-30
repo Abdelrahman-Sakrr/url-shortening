@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 
 :root {
   --background: #ffffff;
@@ -8,13 +9,29 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-poppins: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+  --customBlue: hsl(180, 66%, 49%);
+  --customPurple: hsl(257, 27%, 26%);
+  --customRed: hsl(0, 87%, 67%);
+  --gray-400: hsl(0, 0%, 75%);
+  --gray-500: hsl(257, 7%, 63%);
+  --gray-900: hsl(255, 11%, 22%);
+  --gray-950: hsl(260, 8%, 14%);
+}
+.bg-customBlue {
+  background-color: var(--customBlue);
+}
+.bg-purple {
+  background-color: var(--customPurple);
+}
+.bg-customRed {
+  background-color: var(--customRed);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #d9d9d9;
     --foreground: #ededed;
   }
 }
