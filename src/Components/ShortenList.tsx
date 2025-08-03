@@ -42,6 +42,7 @@ export default function ShortenList() {
       setShortenedList([{ original: value, shortened }, ...shortenedList]);
       setisShortenSuccess(true);
       setValue("");
+      setError("");
     } else {
       setError("Please Enter A Valid URL");
     }
@@ -121,7 +122,7 @@ export default function ShortenList() {
               <button
                 onClick={() => handleCopy(item.shortened)}
                 className={`${
-                  copiedUrl === item.shortened ? "bg-gray-800" : "bg-customBlue"
+                  copiedUrl === item.shortened ? "bg-gray-800 cursor-default" : "bg-customBlue cursor-pointer"
                 } text-white px-4 py-1 rounded-md transition hover:opacity-80`}
               >
                 {copiedUrl === item.shortened ? "Copied!" : "Copy"}
