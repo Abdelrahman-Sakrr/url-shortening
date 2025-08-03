@@ -75,7 +75,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t bg-gray-800 text-white absolute rounded-xl top-20 left-0 w-full border-slate-200 dark:border-slate-700 py-4"
           >
-            {navElements.map((item, index) => (
+            {navElements.map((item) => (
               <button
                 key={item.title}
                 onClick={() => handleNavClick(item.title)}
