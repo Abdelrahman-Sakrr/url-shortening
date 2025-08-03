@@ -80,7 +80,12 @@ export default function ShortenList() {
               type="url"
               name="myUrl"
               value={value}
-              onKeyDown={(e) => (e.key === "enter" ? handleSubmit : "")}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSubmit();
+                  e.preventDefault();
+                }
+              }}
               onChange={(e) => {
                 setValue(e.target.value);
                 handleShorten();
@@ -122,7 +127,9 @@ export default function ShortenList() {
               <button
                 onClick={() => handleCopy(item.shortened)}
                 className={`${
-                  copiedUrl === item.shortened ? "bg-gray-800 cursor-default" : "bg-customBlue cursor-pointer"
+                  copiedUrl === item.shortened
+                    ? "bg-gray-800 cursor-default"
+                    : "bg-customBlue cursor-pointer"
                 } text-white px-4 py-1 rounded-md transition hover:opacity-80`}
               >
                 {copiedUrl === item.shortened ? "Copied!" : "Copy"}
