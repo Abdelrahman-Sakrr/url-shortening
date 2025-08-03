@@ -19,12 +19,12 @@ export default function ShortenList() {
     return pattern.test(url);
   };
 
-  const handleShorten = () => {
-    if (!value) {
+  const handleShorten = (url: string) => {
+    if (!url) {
       setError("Please enter a URL.");
       return;
     }
-    if (!validateUrl(value)) {
+    if (!validateUrl(url)) {
       setError("Please enter a valid URL.");
       return;
     }
@@ -88,7 +88,7 @@ export default function ShortenList() {
               }}
               onChange={(e) => {
                 setValue(e.target.value);
-                handleShorten();
+                handleShorten(e.target.value);
               }}
               placeholder="Shorten a Link Here"
               className={`md:w-2/3 w-full min-h-12 text-black px-5 z-10 rounded-md bg-white focus:border-white outline-none ${
